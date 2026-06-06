@@ -176,7 +176,7 @@ console.log("23" * "2"); // converts both to numbers, same for division
 let n = 1 + "1"; // "11"
 n = n - 1; // 11 - 1 = 10
 console.log(n); // 10
-*/
+
 
 // Truthy and Falsy Values Lecture
 
@@ -202,3 +202,117 @@ if (height) {
 } else {
     console.log("Height is undefined"); // uhoh, there's a bug
 }
+
+
+// Equality Operators Lecture
+
+const age = "18";
+if (age === 18) console.log("You just became an adult! (strict)");
+
+// assignment: =, loose equality (with type coercion): ==, strict equality: ====
+// avoid loose equality as much as possible to avoid bugs
+if (age == 18) console.log("You just became an adult! (loose)");
+
+const favourite = Number(prompt("what's your favourite number?"));
+console.log(favourite);
+console.log(typeof favourite);
+
+if (favourite === 23) {
+    console.log("Cool! 23 is an amazing number!");
+} else if (favourite === 7) {
+    console.log("7 is also a cool number");
+} else if (favourite === 9) {
+    console.log("9 is also a cool number");
+} else {
+    console.log("Number is not 23 or 7 or 9");
+}
+
+if (favourite !== 23) console.log("why not 23?");
+
+
+// Logical Operators Lecture
+
+const hasDriversLicense = true;
+const hasGoodVision = true;
+
+console.log(hasDriversLicense && hasGoodVision);
+console.log(hasDriversLicense || hasGoodVision);
+console.log(!hasDriversLicense);
+
+// if (hasDriversLicense && hasGoodVision) {
+//     console.log("Sarah is able to drive!");
+// } else {
+//     console.log("Someone else should drive...");
+// }
+
+const isTired = false;
+console.log(hasDriversLicense || hasGoodVision || isTired);
+console.log(hasDriversLicense && hasGoodVision && isTired);
+
+if (hasDriversLicense && hasGoodVision && !isTired) {
+    console.log("Sarah is able to drive!");
+} else {
+    console.log("Someone else should drive...");
+}
+
+
+// Switch Statement Lecture
+
+const day = "thursday";
+
+switch (day) {
+    case "monday":
+        console.log("Plan course structure");
+        console.log("Go to coding meetup");
+        break;
+    case "tuesday":
+        console.log("Prepare theory videos");
+        break;
+    case "wednesday":
+    case "thursday":
+        console.log("Write code examples");
+        break;
+    case "friday":
+        console.log("Record videos");
+        break;
+    case "saturday":
+    case "sunday":
+        console.log("Enjoy the weekend!");
+        break;
+    default:
+        console.log("Not a valid day");
+}
+
+if (day === "monday") {
+    console.log("Plan course structure");
+    console.log("Go to coding meetup");
+} else if (day === "tuesday") {
+    console.log("Prepare theory videos");
+} else if (day === "wednesday" || day === "thursday") {
+    console.log("Write code examples");
+} else if (day === "friday") {
+    console.log("Record videos");
+} else if (day === "saturday" || day === "sunday") {
+    console.log("Enjoy the weekend!");
+} else {
+    console.log("Not a valid day");
+}
+*/
+
+// Conditional Operator Lecture
+
+const age = 15;
+// age >= 18 ? console.log("I like to drink wine") : console.log("I like to drink water");
+
+const drink = age >= 18 ? "wine" : "water";
+console.log(drink);
+
+let drink2;
+if (age >= 18) {
+    drink2 = "wine";
+} else {
+    drink2 = "water";
+}
+console.log(drink2);
+
+console.log(`I like to drink ${age >= 18 ? "wine" : "water"}`)
