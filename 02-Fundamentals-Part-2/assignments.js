@@ -48,3 +48,26 @@ const describeFinland = describePopulation("Finland", 6, "Helsinki");
 const describeCanada = describePopulation("Canada", 41, "Ottawa");
 const describeBrazil = describePopulation("Brazil", 213, "Brasilia");
 console.log(describeFinland, describeCanada, describeBrazil);
+
+
+// Intro to Arrays
+const populations = [6, 41, 213, 123];
+console.log(populations.length === 4);
+const percentages = [percentageOfWorld1(populations[0]), percentageOfWorld1(populations[1]), percentageOfWorld1(populations[2]), percentageOfWorld1(populations[3])];
+
+console.log(percentages);
+
+
+// Basic Array Operations
+const neighbours = ["US", "Denmark"];
+neighbours.push("Utopia");
+console.log(neighbours);
+neighbours.pop();
+
+if (!neighbours.includes("Germany")) {
+    console.log("Probably not a central european country :D");
+}
+
+const indexUS = neighbours.indexOf("US");
+neighbours[indexUS] = "USA";
+console.log(neighbours);
