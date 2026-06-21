@@ -71,3 +71,32 @@ if (!neighbours.includes("Germany")) {
 const indexUS = neighbours.indexOf("US");
 neighbours[indexUS] = "USA";
 console.log(neighbours);
+
+
+// Intro to Objects & Object Methods
+const myCountry = {
+    country: 'Canada',
+    capital: 'Ottawa',
+    language: 'English and French',
+    population: 41.4,
+    neighbours: ["US", "Denmark"],
+
+    describe: function () {
+        console.log(`${this.country} has ${this.population} million ${this.language} speaking people, ${this.neighbours.length} neighbouring countries and a capital called ${this.capital}.`);
+    },
+
+    checkIsland: function () {
+        this.isIsland = neighbours.length === 0 ? this.isIsland = true : this.isIsland = false;
+        return this.isIsland;
+    }
+}
+
+console.log(`${myCountry.country} has ${myCountry.population} million ${myCountry.language} speaking people, ${myCountry.neighbours.length} neighbouring countries and a capital called ${myCountry.capital}.`);
+
+myCountry.population += 2;
+myCountry['population'] -= 2;
+
+myCountry.describe();
+myCountry.checkIsland();
+
+console.log(myCountry);
