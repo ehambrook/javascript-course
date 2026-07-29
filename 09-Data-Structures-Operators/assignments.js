@@ -197,7 +197,6 @@ console.log(rating, ratingsCount);
 const ratingStars = [63405, 1808];
 const [fiveStarRatings, oneStarRatings, threeStarRatings = 0] = ratingStars;
 console.log(fiveStarRatings, oneStarRatings, threeStarRatings);
-*/
 
 
 // Destructuring Objects
@@ -232,3 +231,54 @@ printBookInfo({
 });
 
 printBookInfo(books[0]);
+
+
+// Spread Operator
+const bookAuthors = [...books[0].author, ...books[1].author];
+
+function spellWord(word) {
+    console.log(...word);
+};
+
+spellWord("JavaScript");
+
+
+// Rest Pattern and Parameters
+const [mainKeyword, ...rest] = books[0].keywords;
+console.log(mainKeyword, rest);
+
+const {publisher: bookPublisher, ...restOfTheBook} = books[1];
+console.log(bookPublisher, restOfTheBook);
+
+function printBookAuthorsCount(title, ...authors) {
+    console.log(`The book "${title}" has ${authors.length} authors`);
+};
+
+printBookAuthorsCount('Algorithms', 'Robert Sedgewick', 'Kevin Wayne');
+
+
+// Short Circuiting (&& and ||)
+function hasExamplesInJava(book) {
+    return book.programmingLanguage === "Java" || "no data available";
+};
+console.log(hasExamplesInJava(books[1]));
+
+for (let i = 0; i < books.length; i++) {
+    books[i].onlineContent && console.log(`"${books[i].title}" provides online content`);
+};
+
+
+// Nullish Coalescing Operator
+for (let i = 0; i < books.length; i++) {
+    books[i].onlineContent ?? console.log(`"${books[i].title}" provides no data about its online content`);
+};
+*/
+
+// Logical Assignments Operators
+for (let i = 0; i < books.length; i++) {
+    books[i].onlineContent ||= 1;
+};
+
+for (let i = 0; i < books.length; i++) {
+    books[i].highlighted &&= !(books[i].thirdParty.goodreads.rating < 4.2);
+};
