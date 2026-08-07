@@ -70,6 +70,71 @@ const restaurant = {
 
 
 /////////////////////////////////////////////////////////
+// New Operations for Sets Lecture
+
+// Methods from ES 2025, need up to date browser 
+const commonFoods = italianFoods.intersection(mexicanFoods);
+console.log("intersection: ", commonFoods);
+console.log([...commonFoods]);
+
+const italianMexicanFusion = italianFoods.union(mexicanFoods);
+console.log("Union", italianMexicanFusion);
+
+console.log(new Set([...italianFoods, ...mexicanFoods]));
+
+const uniqueItalianFoods = italianFoods.difference(mexicanFoods);
+console.log("Difference Italian: ", uniqueItalianFoods);
+
+const uniqueMexicanFoods = mexicanFoods.difference(italianFoods);
+console.log("Difference Mexican: ", uniqueMexicanFoods);
+
+const uniqueItalianAndMexicanFoods = italianFoods.symmetricDifference(mexicanFoods);
+console.log(uniqueItalianAndMexicanFoods);
+
+// other methods: isSubset, isSuperset, isDisjointFrom
+console.log(italianFoods.isDisjointFrom(mexicanFoods));
+
+/*
+/////////////////////////////////////////////////////////
+// Sets Lecture
+const ordersSet = new Set([
+  "pasta", 
+  "pizza", 
+  "pizza", 
+  "risotto",
+  "pasta",
+  "pizza",
+]);
+console.log(ordersSet);
+
+console.log(new Set("Jonas"));
+
+console.log(ordersSet.size);
+console.log(ordersSet.has("pizza"));
+console.log(ordersSet.has("bread"));
+ordersSet.add("garlic bread");
+ordersSet.add("garlic bread");
+ordersSet.delete("risotto");
+// ordersSet.clear();
+console.log(ordersSet);
+
+for (const order of ordersSet) {
+  console.log(order);
+}
+
+// Example
+const staff = ["waiter", "chef", "waiter", "manager", "chef", "waiter"];
+const staffUnique = [...new Set(staff)];
+console.log(staffUnique);
+console.log(
+  new Set(["waiter", "chef", "waiter", "manager", "chef", "waiter"]).size
+);
+
+console.log(new Set("jonas").size);
+
+
+
+/////////////////////////////////////////////////////////
 // Looping Objects Lecture
 
 // Property NAMES
@@ -95,7 +160,7 @@ for (const [day, {open, close}] of entries) {
   console.log(`On ${day} we open at ${open} and close at ${close}.`);
 }
 
-/*
+
 /////////////////////////////////////////////////////////
 // Optional Chaining Lecture
 
